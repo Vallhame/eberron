@@ -1,219 +1,243 @@
-/***
-* DO NOT ADD/MODIFY STYLING HERE. IT WILL BE OVERWRITTEN IF YOU UPDATE THE TEMPLATE VERSION.
-* MODIFY THE custom-style.scss FILE INSTEAD.
-***/
-
+/* Steampunk D&D Theme for Digital Garden */
 :root {
-    --background-primary: rgb(32, 31, 31);
-    --background-secondary: rgb(57, 56, 56);
-    --text-normal: #dcddde;
-    --text-accent: rgb(97, 186, 245);
-    --file-margins: 32px;
+    --primary-brass: #B8860B;
+    --secondary-copper: #B87333;
+    --dark-leather: #8B4513;
+    --parchment: #F5F5DC;
+    --deep-wood: #654321;
+    --steel-blue: #4682B4;
+    --velvet-red: #8B0000;
+    --ink-black: #2F2F2F;
+    --aged-paper: #F3E5AB;
+}
 
-    --callout-border-width: 0px;
-    --callout-border-opacity: 0.25;
-    --callout-padding: 12px 12px 12px 24px;
-    --callout-radius: 4px;
-    --callout-blend-mode: lighten;
-    --callout-title-padding: 0;
-    --callout-title-size: inherit;
-    --callout-content-padding: 0;
+/* Основные стили */
+body {
+    background-color: var(--aged-paper);
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23b8860b' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+    color: var(--ink-black);
+    font-family: 'Times New Roman', serif;
+    line-height: 1.6;
+}
+
+/* Заголовки с металлическим эффектом */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--dark-leather);
+    border-bottom: 2px solid var(--primary-brass);
+    padding-bottom: 0.5rem;
+    text-shadow: 1px 1px 2px rgba(184, 134, 11, 0.3);
+    font-weight: bold;
 }
 
 h1 {
-    color: #ffef60;
+    background: linear-gradient(45deg, var(--primary-brass), var(--secondary-copper));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    border-bottom: 3px solid var(--primary-brass);
 }
 
-h2 {
-    color: #f06449;
+/* Навигация и шапка */
+.navbar,
+.dg-header {
+    background: linear-gradient(135deg, var(--dark-leather), var(--deep-wood)) !important;
+    border: 3px double var(--primary-brass) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
 }
 
-h3 {
-    color: #d4fcc3;
+.navbar a,
+.dg-header a {
+    color: var(--parchment) !important;
+    text-decoration: none;
+    border: 1px solid transparent;
+    padding: 5px 10px;
+    border-radius: 3px;
+    transition: all 0.3s ease;
 }
 
-h4 {
-    color: #72dcff;
+.navbar a:hover,
+.dg-header a:hover {
+    background-color: var(--primary-brass) !important;
+    border: 1px solid var(--parchment) !important;
+    color: var(--ink-black) !important;
 }
 
-button {
-    border: none;
-    color: white;
-    padding: 5px 15px;
+/* Карточки и блоки контента */
+.card,
+.dg-note,
+.content-block {
+    background-color: var(--parchment) !important;
+    border: 2px solid var(--dark-leather) !important;
+    border-radius: 8px !important;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2) !important;
+    padding: 1.5rem !important;
+    margin: 1rem 0 !important;
+    position: relative;
 }
 
-.centered {
+.card::before,
+.dg-note::before {
+    content: "";
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border: 1px solid var(--primary-brass);
+    border-radius: 10px;
+    z-index: -1;
+    opacity: 0.5;
 }
 
-.theme-dark {
-    background: var(--background-primary);
-    color: var(--text-normal);
-    font-family: var(--font-default);
-}
-
-.theme-light {
-    background: white;
-    color: black;
-    font-family: var(--font-default);
-}
-
-a.is-unresolved {
-    color: rgb(97 186 245 / 65%);
-}
+/* Ссылки */
 a {
-    text-decoration: underline;
-    color: var(--text-accent);
+    color: var(--velvet-red) !important;
+    text-decoration: none;
+    border-bottom: 1px dotted var(--primary-brass);
+    transition: all 0.3s ease;
 }
 
-.font-bg {
-    font-size: 92px;
+a:hover {
+    color: var(--primary-brass) !important;
+    border-bottom: 2px solid var(--primary-brass);
+    background-color: rgba(184, 134, 11, 0.1);
 }
 
+/* Кнопки */
+button,
+.btn,
+.dg-button {
+    background: linear-gradient(135deg, var(--primary-brass), var(--secondary-copper)) !important;
+    color: var(--parchment) !important;
+    border: 2px solid var(--dark-leather) !important;
+    border-radius: 4px !important;
+    padding: 8px 16px !important;
+    font-weight: bold !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    transition: all 0.3s ease !important;
+}
+
+button:hover,
+.btn:hover,
+.dg-button:hover {
+    background: linear-gradient(135deg, var(--secondary-copper), var(--primary-brass)) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Граф связей */
+.graph-view,
+.dg-graph {
+    background-color: var(--aged-paper) !important;
+    border: 3px double var(--primary-brass) !important;
+    border-radius: 8px !important;
+}
+
+.graph-view .node,
+.dg-graph .node {
+    background-color: var(--parchment) !important;
+    border: 2px solid var(--dark-leather) !important;
+    color: var(--ink-black) !important;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Боковая панель */
+.sidebar,
+.dg-sidebar {
+    background: linear-gradient(180deg, var(--deep-wood), var(--dark-leather)) !important;
+    border-right: 3px solid var(--primary-brass) !important;
+}
+
+.sidebar a,
+.dg-sidebar a {
+    color: var(--parchment) !important;
+    border-left: 3px solid transparent;
+    padding-left: 10px;
+    transition: all 0.3s ease;
+}
+
+.sidebar a:hover,
+.dg-sidebar a:hover {
+    border-left: 3px solid var(--primary-brass);
+    background-color: rgba(184, 134, 11, 0.2) !important;
+}
+
+/* Поиск */
+.search-box,
+.dg-search {
+    background-color: var(--parchment) !important;
+    border: 2px solid var(--primary-brass) !important;
+    border-radius: 25px !important;
+    padding: 10px 20px !important;
+    color: var(--ink-black) !important;
+}
+
+.search-box:focus,
+.dg-search:focus {
+    outline: none;
+    box-shadow: 0 0 10px var(--primary-brass) !important;
+}
+
+/* Цитаты и блоки кода */
 blockquote {
-    background: #ffffff17;
-    border-left: 10px solid #c1dbe3;
-    margin: 1.5em 10px;
-    padding: 0.5em 10px;
-    quotes: "\201C""\201D""\2018""\2019";
+    background-color: rgba(184, 134, 11, 0.1) !important;
+    border-left: 4px solid var(--primary-brass) !important;
+    padding: 1rem !important;
+    font-style: italic !important;
+    color: var(--deep-wood) !important;
 }
 
-blockquote:before {
-    color: #ccc;
-    content: open-quote;
-    font-size: 4em;
-    line-height: 0.1em;
-    margin-right: 0.1em;
-    vertical-align: -0.4em;
+code,
+pre {
+    background-color: var(--ink-black) !important;
+    color: var(--primary-brass) !important;
+    border: 1px solid var(--secondary-copper) !important;
+    border-radius: 4px !important;
 }
 
-blockquote p {
-    display: inline;
+/* Таблицы */
+table {
+    border: 2px solid var(--dark-leather) !important;
+    border-collapse: collapse !important;
+    width: 100% !important;
 }
 
-p > code {
-    //Inline code
-    color: #c7254e;
-    background-color: #1a1a1a;
+th {
+    background: linear-gradient(135deg, var(--primary-brass), var(--secondary-copper)) !important;
+    color: var(--parchment) !important;
+    padding: 12px !important;
+    text-align: left !important;
 }
 
-.callout {
-    --callout-color: 68, 138, 255;
-    --callout-icon: lucide-pencil;
+td {
+    background-color: var(--parchment) !important;
+    padding: 10px !important;
+    border-bottom: 1px solid var(--primary-brass) !important;
 }
-.callout[data-callout="abstract"],
-.callout[data-callout="summary"],
-.callout[data-callout="tldr"] {
-    --callout-color: 0, 176, 255;
-    --callout-icon: lucide-clipboard-list;
+
+/* Футер */
+.footer,
+.dg-footer {
+    background: linear-gradient(135deg, var(--dark-leather), var(--deep-wood)) !important;
+    color: var(--parchment) !important;
+    border-top: 3px double var(--primary-brass) !important;
+    padding: 2rem 0 !important;
+    text-align: center !important;
 }
-.callout[data-callout="info"],
-.callout[data-callout="todo"] {
-    --callout-color: 0, 184, 212;
-}
-.callout[data-callout="info"] {
-    --callout-icon: lucide-info;
-}
-.callout[data-callout="todo"] {
-    --callout-icon: lucide-check-circle-2;
-}
-.callout[data-callout="tip"],
-.callout[data-callout="hint"],
-.callout[data-callout="important"] {
-    --callout-color: 0, 191, 165;
-    --callout-icon: lucide-flame;
-}
-.callout[data-callout="success"],
-.callout[data-callout="check"],
-.callout[data-callout="done"] {
-    --callout-color: 0, 200, 83;
-    --callout-icon: lucide-check;
-}
-.callout[data-callout="question"],
-.callout[data-callout="help"],
-.callout[data-callout="faq"] {
-    --callout-color: 100, 221, 23;
-    --callout-icon: help-circle;
-}
-.callout[data-callout="warning"],
-.callout[data-callout="caution"],
-.callout[data-callout="attention"] {
-    --callout-color: 255, 145, 0;
-    --callout-icon: lucide-alert-triangle;
-}
-.callout[data-callout="failure"],
-.callout[data-callout="fail"],
-.callout[data-callout="missing"] {
-    --callout-color: 255, 82, 82;
-    --callout-icon: lucide-x;
-}
-.callout[data-callout="danger"],
-.callout[data-callout="error"] {
-    --callout-color: 255, 23, 68;
-    --callout-icon: lucide-zap;
-}
-.callout[data-callout="bug"] {
-    --callout-color: 245, 0, 87;
-    --callout-icon: lucide-bug;
-}
-.callout[data-callout="example"] {
-    --callout-color: 124, 77, 255;
-    --callout-icon: lucide-list;
-}
-.callout[data-callout="quote"],
-.callout[data-callout="cite"] {
-    --callout-color: 158, 158, 158;
-    --callout-icon: lucide-quote;
-}
-.callout {
-    overflow: hidden;
-    border-style: solid;
-    border-color: rgba(var(--callout-color), var(--callout-border-opacity));
-    border-width: var(--callout-border-width);
-    border-radius: var(--callout-radius);
-    margin: 1em 0;
-    mix-blend-mode: var(--callout-blend-mode);
-    background-color: rgba(var(--callout-color), 0.1);
-    padding: var(--callout-padding);
-}
-.callout.is-collapsible .callout-title {
-    cursor: default;
-}
-.callout-title {
-    padding: var(--callout-title-padding);
-    display: flex;
-    gap: 4px;
-    font-size: var(--callout-title-size);
-    color: rgb(var(--callout-color));
-    line-height: 1.3;
-}
-.callout-content {
-    overflow-x: auto;
-    padding: var(--callout-content-padding);
-}
-.callout-icon {
-    flex: 0 0 auto;
-    display: flex;
-    align-self: center;
-}
-.callout-icon .svg-icon {
-    color: rgb(var(--callout-color));
-}
-.callout-title-inner {
-    font-weight: 600;
-}
-.callout-fold {
-    display: flex;
-    align-items: center;
-    padding-right: 8px;
-}
-.callout-fold .svg-icon {
-    transition: transform 100ms ease-in-out;
-}
-.callout.is-collapsed .callout-fold .svg-icon {
-    transform: rotate(-90deg);
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    body {
+        padding: 10px !important;
+    }
+
+    .navbar,
+    .dg-header {
+        border-radius: 0 !important;
+    }
 }
